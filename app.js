@@ -24,12 +24,16 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
   if (errorMessage) {
     console.log(errorMessage);
   } else {
-    console.log(JSON.stringify(results, undefined, 2));
+    // console.log(JSON.stringify(results, undefined, 2));
     var lat = results.latitude;
     var lng = results.longitude;
+    console.log(results.address);
     forecast.forecastWeather(lat, lng, (errMsg, weatherResults) => {
       if (errMsg) {console.log(errMsg)}
-      console.log(JSON.stringify(weatherResults, undefined, 2));
+
+      // console.log(JSON.stringify(weatherResults, undefined, 2));
+      // console.log(`The temperature at ${results.address} is ${weatherResults.temperature}`);
+      console.log(`It's currently ${weatherResults.temperature} degrees Farenheit. It feels like ${weatherResults.apparentTemp} degrees Farenheit`);
     });
   }
 });
