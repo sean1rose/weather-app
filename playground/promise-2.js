@@ -22,7 +22,6 @@ var geocodeAddress = (address) => {
           longitude: body.results[0].geometry.location.lng
         }
         resolve(resultObj);
-
       }
     });
   });

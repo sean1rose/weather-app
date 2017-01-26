@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sean1rose/weather-app#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "request": "^2.79.0",
     "yargs": "^4.8.1"
   }
