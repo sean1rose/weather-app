@@ -17,10 +17,12 @@ module.exports = {
       else if (response.statusCode === 200){
         var shortSummary = body.currently.summary;
         var temperature = body.currently.temperature;
+        var apparentTemp = body.currently.apparentTemperature;
         var longSummary = body.daily.summary;
         callback(undefined, {
           shortSummary,
           temperature,
+          apparentTemp,
           longSummary
         });
       }

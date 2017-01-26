@@ -27,9 +27,9 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     console.log(JSON.stringify(results, undefined, 2));
     var lat = results.latitude;
     var lng = results.longitude;
-    forecast.forecastWeather(lat, lng, (errMsg, data) => {
+    forecast.forecastWeather(lat, lng, (errMsg, weatherResults) => {
       if (errMsg) {console.log(errMsg)}
-      console.log(JSON.stringify(data, undefined, 2));
+      console.log(JSON.stringify(weatherResults, undefined, 2));
     });
   }
 });
