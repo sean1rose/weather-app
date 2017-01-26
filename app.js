@@ -21,6 +21,7 @@ const argv = yargs
 
 
 geocode.geocodeAddress(argv.address, (errorMessage, results) => {
+  // callback #1
   if (errorMessage) {
     console.log(errorMessage);
   } else {
@@ -29,22 +30,10 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     var lng = results.longitude;
     console.log(results.address);
     forecast.forecastWeather(lat, lng, (errMsg, weatherResults) => {
+      // callback #2
       if (errMsg) {console.log(errMsg)}
-
       // console.log(JSON.stringify(weatherResults, undefined, 2));
-      // console.log(`The temperature at ${results.address} is ${weatherResults.temperature}`);
       console.log(`It's currently ${weatherResults.temperature} degrees Farenheit. It feels like ${weatherResults.apparentTemp} degrees Farenheit`);
     });
   }
 });
-
-// 0fe216f6f0bea9cb53652fb64dbe9e3d
-// https://api.darksky.net/forecast/0fe216f6f0bea9cb53652fb64dbe9e3d/33.741383,-117.79436
-// https://api.darksky.net/forecast/APIKEY/LAT,LNG
-
-// request({
-//   url: `https://api.darksky.net/forecast/0fe216f6f0bea9cb53652fb64dbe9e3d/33.741383,-117.79436`,
-//   json: true
-// }, (err, res, body) => {
-//   console.log('current temp is - ', body.currently.temperature);
-// })

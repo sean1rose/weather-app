@@ -1,6 +1,10 @@
 const request = require('request');
 const config = require('../config');
 
+// 0fe216f6f0bea9cb53652fb64dbe9e3d
+// https://api.darksky.net/forecast/0fe216f6f0bea9cb53652fb64dbe9e3d/33.741383,-117.79436
+// https://api.darksky.net/forecast/APIKEY/LAT,LNG
+
 module.exports = {
   forecastWeather: (lat, lng, callback) => {
     // https://api.darksky.net/forecast/0fe216f6f0bea9cb53652fb64dbe9e3d/33.741383,-117.79436
